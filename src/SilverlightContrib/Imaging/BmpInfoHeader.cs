@@ -92,7 +92,7 @@ namespace SilverlightContrib.Imaging
             // Fix for no ImageSize in the header
             if (header.ImageSize == 0)
             {
-                int rowSize = 4 * (int)Math.Ceiling(header.Width * (header.BitsPerPixel / 32));
+                int rowSize = 4 * (int)Math.Ceiling((double)header.Width * (header.BitsPerPixel / 32));
                 int fileSize = header.HeaderSize + (4 * (int)Math.Pow(2, header.BitsPerPixel)) + rowSize + header.Height;
 
                 header.ImageSize = (int)fileSize;

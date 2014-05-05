@@ -78,7 +78,20 @@ namespace SilverlightContrib.Controls
                 converter.TreatWarningAsError = false;
 
                 string xaml = converter.ToXaml(stream);
+#if SILVERLIGHT
                 this.result = (FrameworkElement)XamlReader.Load(xaml);
+#else
+                MemoryStream ss = new MemoryStream();
+                StreamWriter writer = new StreamWriter(ss);
+                writer.Write(xaml);
+                writer.Flush();
+                ss.Position = 0;
+               
+                this.result = (FrameworkElement)XamlReader.Load(ss);
+
+                writer.Close();
+                ss.Close();
+#endif
 
                 if (this.owner != null) {
                     this.owner.SetResult(this.result);

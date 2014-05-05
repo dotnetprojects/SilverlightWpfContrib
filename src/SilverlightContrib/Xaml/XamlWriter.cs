@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.Windows;
@@ -24,7 +25,11 @@ namespace SilverlightContrib.Xaml
         /// <summary>
         /// The XAML client namespace
         /// </summary>
+#if SILVERLIGHT
         public const string NamespaceClient = "http://schemas.microsoft.com/client/2007";
+#else
+        public const string NamespaceClient = "http://schemas.microsoft.com/winfx/2006/xaml/presentation";
+#endif
         /// <summary>
         /// The XAML namespace
         /// </summary>
@@ -168,6 +173,23 @@ namespace SilverlightContrib.Xaml
             return typeName;
         }
 
+#if !SILVERLIGHT
+        /// <summary>
+        /// Writes the start element of given object.
+        /// </summary>
+        /// <param name="o">The o.</param>
+        /// <returns></returns>
+        protected virtual string WriteStartElement(Stroke o)
+        {
+            Type type = o.GetType();
+            string typeName = type.Name;
+
+            WriteStartElement(typeName);
+            
+            return typeName;
+        }
+#endif
+
         /// <summary>
         /// Writes the XAML of specified UI element.
         /// </summary>
@@ -261,11 +283,13 @@ namespace SilverlightContrib.Xaml
                 WriteInnerElement(media, typeName);
                 goto End;
             }
+#if SILVERLIGHT
             MultiScaleImage multiScaleImage = element as MultiScaleImage;
             if (multiScaleImage != null) {
                 WriteInnerElement(multiScaleImage, typeName);
                 goto End;
             }
+#endif
             Glyphs glyphs = element as Glyphs;
             if (glyphs != null) {
                 WriteInnerElement(glyphs, typeName);
@@ -395,7 +419,9 @@ namespace SilverlightContrib.Xaml
             WriteStartElement(string.Format("{0}.DrawingAttributes", typeName));
             WriteStartElement("DrawingAttributes");
             WriteAttribute("Color", stroke.DrawingAttributes.Color, Colors.Black);
+#if SILVERLIGHT
             WriteAttribute("OutlineColor", stroke.DrawingAttributes.OutlineColor, DefaultColor);
+#endif
             WriteAttribute("Width", stroke.DrawingAttributes.Width, 3.0);
             WriteAttribute("Height", stroke.DrawingAttributes.Height, 3.0);
             WriteEndElement();
@@ -464,10 +490,12 @@ namespace SilverlightContrib.Xaml
                         WriteAttribute("ImageSource", bitmap.UriSource);
                     }
                 }
+#if SILVERLIGHT
                 VideoBrush video = tile as VideoBrush;
                 if (video != null) {
                     WriteAttribute("SourceName", video.SourceName);
                 }
+#endif
 
                 WriteAttribute("AlignmentX", tile.AlignmentX, AlignmentX.Center);
                 WriteAttribute("AlignmentY", tile.AlignmentY, AlignmentY.Center);
@@ -746,8 +774,9 @@ namespace SilverlightContrib.Xaml
 
             WriteAttribute("IsTabStop", control.IsTabStop, true);
             WriteAttribute("TabIndex", control.TabIndex, -1);
+#if SILVERLIGHT
             WriteAttribute("TabNavigation", control.TabNavigation, KeyboardNavigationMode.Local);
-
+#endif
             if (background == null && control.Background != null) {
                 WriteStartElement(string.Format("{0}.Background", typeName));
                 WriteElement(control.Background);
@@ -787,10 +816,12 @@ namespace SilverlightContrib.Xaml
             //TODO: implement
         }
 
+#if SILVERLIGHT
         private void WriteInnerElement(MultiScaleImage image, string typeName)
         {
             //TODO: implement
         }
+#endif
 
         private void WriteInnerElement(TextBlock textBlock, string typeName)
         {
@@ -816,8 +847,8 @@ namespace SilverlightContrib.Xaml
                 WriteEndElement();
             }
             if (text == null && textBlock.Inlines != null) {
-                if (textBlock.Inlines.Count == 1 && textBlock.Inlines[0] is Run) {
-                    this.writer.WriteString(((Run)textBlock.Inlines[0]).Text);
+                if (textBlock.Inlines.Count == 1 && textBlock.Inlines.First() is Run) {
+                    this.writer.WriteString(((Run)textBlock.Inlines.First()).Text);
                 }
                 else {
                     foreach (Inline inline in textBlock.Inlines) {
@@ -922,6 +953,7 @@ namespace SilverlightContrib.Xaml
                 goto End;
             }
             
+#if SILVERLIGHT
             InkPresenter ink = panel as InkPresenter;
             if (ink != null) {
                 if (ink.Strokes != null) {
@@ -933,6 +965,7 @@ namespace SilverlightContrib.Xaml
                 }
                 goto End;
             }
+#endif
 
             // a custom class derived from Panel
             WriteCustomProperties(panel, typeName, typeof(Panel));
@@ -1327,7 +1360,7 @@ namespace SilverlightContrib.Xaml
             bool result = false;
 
             if (textBlock.Inlines != null && textBlock.Inlines.Count == 1) {
-                Run run = textBlock.Inlines[0] as Run;
+                Run run = textBlock.Inlines.First() as Run;
                 if (run != null && run.Text == textBlock.Text && run.Text.IndexOf('\n') == -1) {
                     value = run.Text;
                     result = true;

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32F647D2-3AF4-40E7-A441-E5E487134ECE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilverlightContrib</RootNamespace>
+    <AssemblyName>SilverlightContrib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SilverlightContrib\Extensions\AnimationExtensions.cs">
+      <Link>Extensions\AnimationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Imaging\BmpDecoder.cs">
+      <Link>Imaging\BmpDecoder.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Imaging\BmpFileHeader.cs">
+      <Link>Imaging\BmpFileHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Imaging\BmpInfoHeader.cs">
+      <Link>Imaging\BmpInfoHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Imaging\EditableImage.cs">
+      <Link>Imaging\EditableImage.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Imaging\EditableImageErrorEventArgs.cs">
+      <Link>Imaging\EditableImageErrorEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Imaging\PngEncoder.cs">
+      <Link>Imaging\PngEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\ByteOrder.cs">
+      <Link>IO\ByteOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\ByteUtility.cs">
+      <Link>IO\ByteUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Checksums\Adler32.cs">
+      <Link>IO\Compression\Zip\Checksums\Adler32.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Checksums\CRC32.cs">
+      <Link>IO\Compression\Zip\Checksums\CRC32.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Checksums\IChecksum.cs">
+      <Link>IO\Compression\Zip\Checksums\IChecksum.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Checksums\StrangeCRC.cs">
+      <Link>IO\Compression\Zip\Checksums\StrangeCRC.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Core\FileSystemScanner.cs">
+      <Link>IO\Compression\Zip\Core\FileSystemScanner.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Core\INameTransform.cs">
+      <Link>IO\Compression\Zip\Core\INameTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Core\IScanFilter.cs">
+      <Link>IO\Compression\Zip\Core\IScanFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Core\NameFilter.cs">
+      <Link>IO\Compression\Zip\Core\NameFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Core\PathFilter.cs">
+      <Link>IO\Compression\Zip\Core\PathFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Core\StreamUtils.cs">
+      <Link>IO\Compression\Zip\Core\StreamUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\Encryption\PkzipClassic.cs">
+      <Link>IO\Compression\Zip\Encryption\PkzipClassic.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\FastZip.cs">
+      <Link>IO\Compression\Zip\FastZip.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\IEntryFactory.cs">
+      <Link>IO\Compression\Zip\IEntryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\SharpZipBaseException.cs">
+      <Link>IO\Compression\Zip\SharpZipBaseException.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\Deflater.cs">
+      <Link>IO\Compression\Zip\ZipCompression\Deflater.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\DeflaterConstants.cs">
+      <Link>IO\Compression\Zip\ZipCompression\DeflaterConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\DeflaterEngine.cs">
+      <Link>IO\Compression\Zip\ZipCompression\DeflaterEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\DeflaterHuffman.cs">
+      <Link>IO\Compression\Zip\ZipCompression\DeflaterHuffman.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\DeflaterPending.cs">
+      <Link>IO\Compression\Zip\ZipCompression\DeflaterPending.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\Inflater.cs">
+      <Link>IO\Compression\Zip\ZipCompression\Inflater.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\InflaterDynHeader.cs">
+      <Link>IO\Compression\Zip\ZipCompression\InflaterDynHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\InflaterHuffmanTree.cs">
+      <Link>IO\Compression\Zip\ZipCompression\InflaterHuffmanTree.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\PendingBuffer.cs">
+      <Link>IO\Compression\Zip\ZipCompression\PendingBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\Streams\DeflaterOutputStream.cs">
+      <Link>IO\Compression\Zip\ZipCompression\Streams\DeflaterOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\Streams\InflaterInputStream.cs">
+      <Link>IO\Compression\Zip\ZipCompression\Streams\InflaterInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\Streams\OutputWindow.cs">
+      <Link>IO\Compression\Zip\ZipCompression\Streams\OutputWindow.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipCompression\Streams\StreamManipulator.cs">
+      <Link>IO\Compression\Zip\ZipCompression\Streams\StreamManipulator.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipConstants.cs">
+      <Link>IO\Compression\Zip\ZipConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipEntry.cs">
+      <Link>IO\Compression\Zip\ZipEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipEntryFactory.cs">
+      <Link>IO\Compression\Zip\ZipEntryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipException.cs">
+      <Link>IO\Compression\Zip\ZipException.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipExtraData.cs">
+      <Link>IO\Compression\Zip\ZipExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipFile.cs">
+      <Link>IO\Compression\Zip\ZipFile.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipHelperStream.cs">
+      <Link>IO\Compression\Zip\ZipHelperStream.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipInputStream.cs">
+      <Link>IO\Compression\Zip\ZipInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipNameTransform.cs">
+      <Link>IO\Compression\Zip\ZipNameTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\IO\Compression\Zip\ZipOutputStream.cs">
+      <Link>IO\Compression\Zip\ZipOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Resources.Designer.cs">
+      <Link>Resources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Text\Parsers\ILexer.cs">
+      <Link>Text\Parsers\ILexer.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Text\Parsers\IToken.cs">
+      <Link>Text\Parsers\IToken.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Text\Parsers\Lexer.cs">
+      <Link>Text\Parsers\Lexer.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Text\Parsers\ParseException.cs">
+      <Link>Text\Parsers\ParseException.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Text\Parsers\Parser.cs">
+      <Link>Text\Parsers\Parser.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Text\StringUtility.cs">
+      <Link>Text\StringUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Tweener\Equations.cs">
+      <Link>Tweener\Equations.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Tweener\TransitionType.cs">
+      <Link>Tweener\TransitionType.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Tweener\Tween.cs">
+      <Link>Tweener\Tween.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\ConverterBase.cs">
+      <Link>Xaml\ConverterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\ConverterException.cs">
+      <Link>Xaml\ConverterException.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\ConverterWarningEventArgs.cs">
+      <Link>Xaml\ConverterWarningEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Emf\Brush.cs">
+      <Link>Xaml\Emf\Brush.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Emf\EmfContext.cs">
+      <Link>Xaml\Emf\EmfContext.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Emf\EmfConverter.cs">
+      <Link>Xaml\Emf\EmfConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Emf\Pen.cs">
+      <Link>Xaml\Emf\Pen.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Formatter.cs">
+      <Link>Xaml\Formatter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Rtf\RtfConverter.cs">
+      <Link>Xaml\Rtf\RtfConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Rtf\RtfLexer.cs">
+      <Link>Xaml\Rtf\RtfLexer.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Rtf\RtfLexerState.cs">
+      <Link>Xaml\Rtf\RtfLexerState.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Rtf\RtfParser.cs">
+      <Link>Xaml\Rtf\RtfParser.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Rtf\RtfToken.cs">
+      <Link>Xaml\Rtf\RtfToken.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\Rtf\RtfTokenType.cs">
+      <Link>Xaml\Rtf\RtfTokenType.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\StringConverterBase.cs">
+      <Link>Xaml\StringConverterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\XamlWriter.cs">
+      <Link>Xaml\XamlWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\XamlWriterSettings.cs">
+      <Link>Xaml\XamlWriterSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib\Xaml\XmlConverterBase.cs">
+      <Link>Xaml\XmlConverterBase.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="..\SilverlightContrib\Resources.resx">
+      <Link>Resources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

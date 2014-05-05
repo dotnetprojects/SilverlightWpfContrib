@@ -1,7 +1,9 @@
 ﻿using System;
+#if SILVERLIGHT
+using System.Windows.Browser;
+#endif
 using System.Windows.Media;
 using System.IO;
-using System.Windows.Browser;
 
 namespace SilverlightContrib.Imaging
 {
@@ -111,7 +113,11 @@ namespace SilverlightContrib.Imaging
             }
             catch (Exception ex)
             {
+#if SILVERLIGHT
                 HtmlPage.Window.Alert("Error parsing BMP file: " + ex.Message);
+#else
+                throw;
+#endif
             }
 
             return image;
@@ -296,7 +302,11 @@ namespace SilverlightContrib.Imaging
                     realRow = header.Height - row - 1;          // Reverse row
                     if (offset >= buffer.Length)
                     {
+#if SILVERLIGHT
                         HtmlPage.Window.Alert("Error - outside of bounds and not sure why");
+#else
+                        throw new Exception("Error - outside of bounds and not sure why");
+#endif
                     }
                     image.SetPixel(col, realRow, buffer[offset + 2], buffer[offset + 1], buffer[offset], 255);
                 }

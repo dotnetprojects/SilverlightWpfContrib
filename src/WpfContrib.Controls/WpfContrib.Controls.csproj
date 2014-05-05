@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B6DE40B-5D32-4498-9E0F-E850FE87B0BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilverlightContrib.Controls</RootNamespace>
+    <AssemblyName>SilverlightContrib.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SilverlightContrib.Controls\ColorPicker\ColorPicker.cs">
+      <Link>ColorPicker\ColorPicker.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\ColorPicker\ColorSpace.cs">
+      <Link>ColorPicker\ColorSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\ColorPicker\HSV.cs">
+      <Link>ColorPicker\HSV.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\ColorPicker\SelectedColorEventArgs.cs">
+      <Link>ColorPicker\SelectedColorEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\CoolMenu\Behaviors\DefaultCoolMenuBehavior.cs">
+      <Link>CoolMenu\Behaviors\DefaultCoolMenuBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\CoolMenu\Behaviors\ICoolMenuBehavior.cs">
+      <Link>CoolMenu\Behaviors\ICoolMenuBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\CoolMenu\CoolMenu.cs">
+      <Link>CoolMenu\CoolMenu.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\CoolMenu\CoolMenuItem.cs">
+      <Link>CoolMenu\CoolMenuItem.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\CoolMenu\CoolMenuItemContainerGenerator.cs">
+      <Link>CoolMenu\CoolMenuItemContainerGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\CoolMenu\SelectedMenuItemArgs.cs">
+      <Link>CoolMenu\SelectedMenuItemArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\Emf\BaseSource.cs">
+      <Link>Emf\BaseSource.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\Emf\DownloadProgressEventArgs.cs">
+      <Link>Emf\DownloadProgressEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\Emf\Emf.cs">
+      <Link>Emf\Emf.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\Emf\EmfSource.cs">
+      <Link>Emf\EmfSource.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\Emf\EmfSourceConverter.cs">
+      <Link>Emf\EmfSourceConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\Emf\ExceptionEventArgs.cs">
+      <Link>Emf\ExceptionEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\Emf\UriTypeConverter.cs">
+      <Link>Emf\UriTypeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\GroupBox\GroupBox.cs">
+      <Link>GroupBox\GroupBox.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\SliderGauge\PercentageChangedEventArgs.cs">
+      <Link>SliderGauge\PercentageChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\SliderGauge\SliderGauge.cs">
+      <Link>SliderGauge\SliderGauge.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\StarSelector\RatingChangedEventArgs.cs">
+      <Link>StarSelector\RatingChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\StarSelector\Star.cs">
+      <Link>StarSelector\Star.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightContrib.Controls\StarSelector\StarSelector.cs">
+      <Link>StarSelector\StarSelector.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfContrib\WpfContrib.csproj">
+      <Project>{32f647d2-3af4-40e7-a441-e5e487134ece}</Project>
+      <Name>WpfContrib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\SilverlightContrib.Controls\themes\generic.xaml">
+      <Link>Themes\generic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
