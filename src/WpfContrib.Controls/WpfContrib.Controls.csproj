@@ -120,9 +120,9 @@
       <Name>WpfContrib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Page Include="..\SilverlightContrib.Controls\themes\generic.xaml">
-      <Link>Themes\generic.xaml</Link>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
