@@ -1,0 +1,83 @@
+﻿<project schemaVersion="1.6.0.7">
+    <assemblies>
+        <assembly assemblyPath=".\SilverlightContrib.Controls\Bin\Debug\SilverlightContrib.Controls.dll" xmlCommentsPath=".\SilverlightContrib.Controls\Bin\Debug\SilverlightContrib.Controls.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\SilverlightContrib.Data\Bin\Debug\SilverlightContrib.Data.dll" xmlCommentsPath="" commentsOnly="False" />
+        <assembly assemblyPath=".\SilverlightContrib\Bin\Debug\SilverlightContrib.dll" xmlCommentsPath=".\SilverlightContrib\Bin\Debug\SilverlightContrib.xml" commentsOnly="False" />
+    </assemblies>
+    <namespaceSummaries>
+        <namespaceSummaryItem name="" isDocumented="False" />
+        <namespaceSummaryItem name="SilverlightContrib" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Controls" isDocumented="True">Namespace containing controls for Silverlight Contrib.</namespaceSummaryItem>
+        <namespaceSummaryItem name="SilverlightContrib.Data.Converters" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Data.Services.Client" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Extensions" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Imaging" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.IO" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.IO.Compression.Zip" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.IO.Compression.Zip.Checksums" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.IO.Compression.Zip.Core" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.IO.Compression.Zip.Encryption" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.IO.Compression.Zip.ZipCompression" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.IO.Compression.Zip.ZipCompression.Streams" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Text" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Text.Parsers" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Tweener" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Utilities" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Utilities.ClipboardHelper" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Xaml" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Xaml.Emf" isDocumented="True" />
+        <namespaceSummaryItem name="SilverlightContrib.Xaml.Rtf" isDocumented="True" />
+    </namespaceSummaries>
+    <conceptualContent snippetFile="">
+        <topics defaultTopic="161af848-9623-4115-8cc5-97fdba13ca9a">
+            <topic id="161af848-9623-4115-8cc5-97fdba13ca9a" file="..\docs\help\conceptual\Welcome.xml" title="Welcome to Silverlight Contrib" revision="1" visible="True" />
+            <topic id="85153611-851f-4d06-9248-2e5fba8a4506" file="..\docs\help\conceptual\Helpers.xml" revision="1" visible="True" />
+            <topic id="6cd9ce82-7e34-4878-80dc-239255f5b7d5" file="..\docs\help\conceptual\License.xml" title="License Agreement" revision="1" visible="True" />
+        </topics>
+    </conceptualContent>
+    <dependencies>
+        <dependencyItem depPath="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v2.0\Libraries\Client\*.*" />
+        <dependencyItem depPath="C:\Program Files (x86)\Microsoft Silverlight\2.0.31005.0\*.*" />
+    </dependencies>
+    <ProjectSummary />
+    <MissingTags>Parameter, Returns, AutoDocumentCtors, TypeParameter</MissingTags>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
+    <HtmlHelp1xCompilerPath path="C:\Program Files (x86)\HTML Help Workshop\" />
+    <HtmlHelp2xCompilerPath path="" />
+    <OutputPath>..\docs\help\</OutputPath>
+    <SandcastlePath path="C:\Program Files (x86)\Sandcastle\" />
+    <WorkingPath path="" />
+    <CleanIntermediates>True</CleanIntermediates>
+    <KeepLogFile>True</KeepLogFile>
+    <BuildLogFile path="" />
+    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <FrameworkVersion>3.5</FrameworkVersion>
+    <IndentHtml>False</IndentHtml>
+    <Preliminary>False</Preliminary>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle />
+    <HelpTitle>Silverlight Contrib Documentation</HelpTitle>
+    <HtmlHelpName>Silverlight Contrib Documentation</HtmlHelpName>
+    <Language>en-US</Language>
+    <CopyrightHref>http://silverlightcontrib.org</CopyrightHref>
+    <CopyrightText>Copyright © 2008, Silverlight Contrib.  All Rights Reserved.</CopyrightText>
+    <FeedbackEMailAddress>feedback@silverlightcontrib.org</FeedbackEMailAddress>
+    <FeedbackEMailLinkText>feedback@silverlightcontrib.org</FeedbackEMailLinkText>
+    <HeaderText />
+    <FooterText />
+    <ProjectLinkType>Local</ProjectLinkType>
+    <SdkLinkType>Msdn</SdkLinkType>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <PresentationStyle>Prototype</PresentationStyle>
+    <NamingMethod>Guid</NamingMethod>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <ShowFeedbackControl>False</ShowFeedbackControl>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <CollectionTocStyle>Hierarchical</CollectionTocStyle>
+    <IncludeStopWordList>True</IncludeStopWordList>
+    <PlugInNamespaces>ms.vsipcc+, ms.vsexpresscc+</PlugInNamespaces>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+</project>

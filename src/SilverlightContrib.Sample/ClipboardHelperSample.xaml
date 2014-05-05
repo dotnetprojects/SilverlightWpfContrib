@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.ClipboardHelperSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid x:Name="LayoutRoot">
+        <TextBox Height="25" Margin="153,8,8,0" VerticalAlignment="Top" Text="" TextWrapping="Wrap" x:Name="TextBoxInput"/>
+        <Button Style="{StaticResource ButtonStyle}" Height="28" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Width="137" Content="Copy text from TextBox" x:Name="ButtonSetClipboardText"/>
+        <TextBlock Height="79" Margin="153,40,8,0" VerticalAlignment="Top" Text="" TextWrapping="Wrap" x:Name="TextBlockOutput" Foreground="#FF000000"/>
+        <Button Style="{StaticResource ButtonStyle}" Height="28" HorizontalAlignment="Left" Margin="8,65,0,0" x:Name="ButtonGetClipboardText" VerticalAlignment="Top" Width="137" Content="Paste text in TextBlock"/>
+        <Button Style="{StaticResource ButtonStyle}" Height="28" HorizontalAlignment="Stretch" Margin="8,141,8,131" x:Name="ButtonClearClipboard" VerticalAlignment="Stretch" Content="Clear Clipboard"/>
+        <Button Style="{StaticResource ButtonStyle}" Height="28" Margin="8,217,8,54" x:Name="ButtonTest" Content="Click on or use Tab to focus this button and press ctrl-v"/>
+    </Grid>
+</UserControl>

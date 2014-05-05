@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ext="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource bgGreyBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="89" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Background="White">
+            <HyperlinkButton NavigateUri="http://silverlightcontrib.org" Margin="10" 
+                             HorizontalAlignment="Left" VerticalAlignment="Center">
+                <HyperlinkButton.Content>
+                    <Image Source="Images/silverlight_contrib.png" />        
+                </HyperlinkButton.Content>
+            </HyperlinkButton>
+            
+        </Grid>
+        <ext:TabControl Grid.Row="1" Margin="10">
+            <ext:TabItem Header="Demos" Height="30" Width="150" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="lstControls" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Margin="0,0,10,0" SelectionChanged="ListBox_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}" FontSize="12" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <TextBlock FontSize="16" Foreground="#fff" Margin="4,4,4,0">
+                            <Run x:Name="sampleTitle" Text=""/>
+                            </TextBlock>
+                            <TextBlock FontSize="12" Foreground="{StaticResource textColour}" Margin="4" TextWrapping="Wrap">
+                            <Run x:Name="sampleDescription" Text=""/>
+                            </TextBlock>
+                        </StackPanel>
+                        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          Grid.Row="1"
+                          Margin="4">
+                          <Grid x:Name="grdControlContent"
+                                />
+                        </ScrollViewer>
+                      </Grid>
+                </Grid>
+            </ext:TabItem>
+            <ext:TabItem Header="About Silverlight Contrib" Height="30" Width="180">
+                <ScrollViewer Style="{StaticResource ScrollViewerStyle}" VerticalScrollBarVisibility="Auto">
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,20">
+                        
+                        <TextBlock FontSize="16" Foreground="#fff" Margin="0,0,0,5">
+						<Run Text="Silverlight Contrib"/>
+                        </TextBlock>
+                        <TextBlock FontSize="12" Foreground="{StaticResource textColour}" Margin="0,0,0,2" TextWrapping="Wrap">
+						<Run Text="Silverlight Contrib is a collection of Silverlight Controls and API enhancements built for and by the Silverlight developer community."/>
+                        </TextBlock>
+                        
+                        <TextBlock FontSize="16" Foreground="#fff" Margin="0,0,0,0">
+						<Run Text="About This Application"/>
+                        </TextBlock>
+                        <TextBlock FontSize="12" Foreground="{StaticResource textColour}" TextWrapping="Wrap">
+						<Run Text="This application demonstrates the various features included in Silverlight Contrib. Dark skin courtesy of Felix Corke."/>
+                        </TextBlock>
+                        
+                        <TextBlock FontSize="16" Foreground="#fff" Margin="0,0,0,0">
+						<Run Text="Contributors"/>
+                        </TextBlock>
+                        <HyperlinkButton Margin="0,0,0,5" Content="Page Brooks - Coordinator &amp; Developer" FontWeight="Bold" NavigateUri="http://pagebrooks.com" TargetName="_blank" VerticalAlignment="Center" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" Foreground="{StaticResource textColour}" />
+                        <HyperlinkButton Margin="0,0,0,5" Content="Rob Houweling - Developer" FontWeight="Bold" NavigateUri="http://web-snippets.blogspot.com/" TargetName="_blank" VerticalAlignment="Center" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" Foreground="{StaticResource textColour}" />
+                        <HyperlinkButton Margin="0,0,0,5" Content="Koen Zwikstra - Developer" FontWeight="Bold" NavigateUri="http://firstfloorsoftware.com" TargetName="_blank" VerticalAlignment="Center" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" Foreground="{StaticResource textColour}" />
+                        <HyperlinkButton Margin="0,0,0,5" Content="Shawn Wildermuth - Developer" FontWeight="Bold" NavigateUri="http://wildermuthconsulting.com" TargetName="_blank" VerticalAlignment="Center" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" Foreground="{StaticResource textColour}" />                        
+                        <HyperlinkButton Margin="0,0,0,5" Content="External Libraries and Contributors" FontWeight="Bold" NavigateUri="http://silverlightcontrib.org/about" TargetName="_blank" VerticalAlignment="Center" Style="{StaticResource HyperlinkButtonStyle}" HorizontalAlignment="Left" Foreground="{StaticResource textColour}" />
+
+                        <TextBlock FontSize="12" Foreground="{StaticResource textColour}" Margin="0,0,0,10" TextWrapping="Wrap">
+						<Run Text="If you have a control or useful utility that you would like to have included in the Silverlight Contrib library, please contact us through the CodePlex site."/>
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </ext:TabItem>
+        </ext:TabControl>
+    </Grid>
+</UserControl>

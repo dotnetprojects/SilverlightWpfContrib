@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.RtfSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="212" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" Style="{StaticResource ScrollViewerStyle}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="rtf" Margin="2" FontFamily="Courier New" AcceptsReturn="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
+        </ScrollViewer>
+        <Button Grid.Row="1" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Content="Convert" Click="Button_Click" />
+        <ScrollViewer Grid.Row="2" Style="{StaticResource ScrollViewerStyle}">
+            <Border x:Name="result" Background="White" Margin="2" />
+        </ScrollViewer>
+    </Grid>
+</UserControl>

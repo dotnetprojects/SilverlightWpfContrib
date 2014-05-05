@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.XamlWriterSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sc="clr-namespace:SilverlightContrib.Controls;assembly=SilverlightContrib.Controls" >
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <ListBox x:Name="list" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" HorizontalAlignment="Center">
+                <ListBoxItem Content="Button Control" />
+                <ListBoxItem Content="Emf Control" />
+                <ListBoxItem Content="RadioButton Control"/>
+            </ListBox>
+            <StackPanel Margin="4">
+                <CheckBox x:Name="checkAttributes" Margin="0,0,0,4" Style="{StaticResource CheckBoxStyle}" Content="Attributes On New Line" />
+                <CheckBox x:Name="checkDefault" Style="{StaticResource CheckBoxStyle}" Content="Write Default Values" />
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="1" Style="{StaticResource ButtonStyle}" Margin="4" Content="Display XAML" HorizontalAlignment="Center" Click="Button_Click" />
+        <ScrollViewer Grid.Row="2" Style="{StaticResource ScrollViewerStyle}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="result" Margin="2" FontFamily="Courier New" AcceptsReturn="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" />
+        </ScrollViewer>
+        <Canvas Grid.Row="0">
+            <!-- move controls out of sight-->
+            <Canvas Canvas.Left="-1000">
+                <Button x:Name="button" ></Button>
+                <sc:Emf x:Name="emf" Source="Images/Wmf/lion.wmf"/>
+                <RadioButton x:Name="radioButton" />
+            </Canvas>
+        </Canvas>
+    </Grid>
+</UserControl>

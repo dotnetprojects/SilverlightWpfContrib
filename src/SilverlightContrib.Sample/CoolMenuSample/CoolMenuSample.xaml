@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.CoolMenuSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:sc="clr-namespace:SilverlightContrib.Controls;assembly=SilverlightContrib.Controls"> 
+    <Grid x:Name="LayoutRoot">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="190" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnAdd" Click="btnAdd_Click" Height="30" Width="80" Content="Add" Margin="5" />
+                    <Button x:Name="btnRemove" Click="btnRemove_Click" Height="30" Width="80" Content="Remove" Margin="5" />
+                </StackPanel>
+                <sc:CoolMenu x:Name="coolMenuRectangle" Height="500" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <sc:CoolMenu.Behavior>
+                        <sc:DefaultCoolMenuBehavior BounceEnabled="False" />
+                    </sc:CoolMenu.Behavior>
+                    <sc:CoolMenu.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </sc:CoolMenu.ItemsPanel>
+                    <sc:CoolMenu.ItemContainerStyle>
+                        <Style TargetType="sc:CoolMenuItem">
+                            <Setter Property="VerticalAlignment" Value="Bottom" />
+                            <Setter Property="HorizontalAlignment" Value="Left" />
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="sc:CoolMenuItem">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <ContentPresenter Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </sc:CoolMenu.ItemContainerStyle>
+                </sc:CoolMenu>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <sc:CoolMenu Height="140">
+                    <Image Source="/Images/CoolMenuImages/Icons/box.png"  Margin="5"  />
+                    <Image Source="/Images/CoolMenuImages/Icons/bomb.png" Margin="5" />
+                    <Image Source="/Images/CoolMenuImages/Icons/calc.png"  Margin="5"  />
+                    <Image Source="/Images/CoolMenuImages/Icons/fish.png" Margin="5"  />
+                    <Image Source="/Images/CoolMenuImages/Icons/gear.png" Margin="5"  />
+                    <Image Source="/Images/CoolMenuImages/Icons/lock.png" Margin="5"  />
+                    <Image Source="/Images/CoolMenuImages/Icons/coffee.png"  Margin="5" />
+                    <Image Source="/Images/CoolMenuImages/Icons/pacman.png" Margin="5" />
+                    <Image Source="/Images/CoolMenuImages/Icons/star.png"  Margin="5"  />
+                </sc:CoolMenu>
+                <sc:CoolMenu Height="125">
+                    <sc:CoolMenu.Behavior>
+                        <sc:DefaultCoolMenuBehavior MaxItemHeight="126" MaxItemWidth="90" BounceEnabled="False" />
+                    </sc:CoolMenu.Behavior>
+                    <Image Source="/Images/CoolMenuImages/Cards/Poker-sm-21A-5s.png" Stretch="UniformToFill" Margin="5" />
+                    <Image Source="/Images/CoolMenuImages/Cards/Poker-sm-23C-3d.png" Stretch="UniformToFill" Margin="5" />
+                    <Image Source="/Images/CoolMenuImages/Cards/Poker-sm-221-Ah.png" Stretch="UniformToFill" Margin="5" />
+                    <Image Source="/Images/CoolMenuImages/Cards/Poker-sm-242-Kc.png" Stretch="UniformToFill" Margin="5" />
+                    <Image Source="/Images/CoolMenuImages/Cards/Poker-sm-245-Tc.png" Stretch="UniformToFill" Margin="5" />
+                </sc:CoolMenu>
+                <sc:CoolMenu x:Name="CoolMenuBinding" Height="130">
+                    <sc:CoolMenu.ItemTemplate>
+                        <DataTemplate>
+                                <Image Source="{Binding}" Margin="5"  />
+                        </DataTemplate>
+                    </sc:CoolMenu.ItemTemplate>
+                </sc:CoolMenu>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,246 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sc="clr-namespace:SilverlightContrib.Controls;assembly=SilverlightContrib"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+    
+    <Style TargetType="sc:ColorPicker">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Height" Value="200" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sc:ColorPicker">
+                    <Grid x:Name="RootElement">
+                        <Canvas>
+                            <Rectangle x:Name="HueMonitor" Canvas.Left="0" Canvas.Top="0" Width="20" Height="180" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint ="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0.00" Color="#ffff0000"/>
+                                        <GradientStop Offset="0.17" Color="#ffffff00"/>
+                                        <GradientStop Offset="0.33" Color="#ff00ff00"/>
+                                        <GradientStop Offset="0.50" Color="#ff00ffff"/>
+                                        <GradientStop Offset="0.66" Color="#ff0000ff"/>
+                                        <GradientStop Offset="0.83" Color="#ffff00ff"/>
+                                        <GradientStop Offset="1.00" Color="#ffff0000"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Canvas x:Name="HueSelector" IsHitTestVisible="False" Height="8" Canvas.Left="0" Canvas.Top="-4">
+                                <Path Width="5" Height="8" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z " />
+                                <Path Width="5" Height="8" Canvas.Top="8" Canvas.Left="20" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z ">
+                                    <Path.RenderTransform>
+                                        <RotateTransform Angle="180" />
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Canvas Canvas.Top="0" Canvas.Left="20">
+                                <Rectangle x:Name="ColorSample" Width="180" Height="180" Fill="Red"></Rectangle>
+                                <Rectangle x:Name="WhiteGradient" IsHitTestVisible="False" Width="180" Height="180">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#ffffffff"/>
+                                            <GradientStop Offset="1" Color="#00ffffff"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Rectangle x:Name="BlackGradient" IsHitTestVisible="False" Width="180" Height="180">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,1" EndPoint="0, 0">
+                                            <GradientStop Offset="0" Color="#ff000000"/>
+                                            <GradientStop Offset="1" Color="#00000000"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Canvas x:Name="SampleSelector" IsHitTestVisible="False" Width="10" Height="10" Canvas.Left="100" Canvas.Top="96">
+                                    <Ellipse Width="10" Height="10" StrokeThickness="3" Stroke="#FFFFFFFF"/>
+                                    <Ellipse Width="10" Height="10" StrokeThickness="1" Stroke="#FF000000"/>
+                                </Canvas>
+                            </Canvas>
+                            <Canvas Canvas.Top="180" Canvas.Left="0">
+                                <Rectangle x:Name="SelectedColorView" Width="200" Height="20" Fill="Black" />
+                                <Rectangle Width="60" Height="20" Fill="Black" />
+                                <TextBlock x:Name="HexValue" Foreground="White" Width="100" Text="#FF0000" FontFamily="Arial" FontSize="11" Canvas.Top="4" Canvas.Left="5"  Height="10" />
+                        </Canvas>
+                        </Canvas>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="sc:SliderGauge">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sc:SliderGauge">
+
+                    <Grid>
+                        <Path Data="M153.15086,186.38315 L405.85733,186.38315 L405.85733,58.413177 C405.85733,58.413177 349.66226,167.58556 153.15086,186.38315 z" Stretch="Fill">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" >
+                                    <GradientStop Color="#FF161616" Offset="0"/>
+                                    <GradientStop Color="#FF545454" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path x:Name="GaugePath" Data="M153.15086,186.38315 L405.85733,186.38315 L405.85733,58.195198 C405.85733,58.195198 349.66226,167.58556 153.15086,186.38315 z" Stretch="Fill" StrokeThickness="1">
+                            <Path.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" >
+                                    <GradientStop Color="#FF009111" Offset="0.333"/>
+                                    <GradientStop Color="#FFD1E617" Offset="0.666"/>
+                                    <GradientStop Color="#FFFF0202" Offset="1.000"/>
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="sc:StarSelector">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sc:StarSelector">
+                    <Border BorderThickness="2" BorderBrush="#FFE0E0E0">
+                        <Border.Background>
+                            <LinearGradientBrush Opacity="0.75" EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFEEEEEE" Offset="0"/>
+                                <GradientStop Color="#FFBDBDBD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel x:Name="RootElement" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <StackPanel.Resources>
+                                <ControlTemplate x:Key="StarTemplate" >
+                                    <Grid Margin="5">
+                                        <vsm:VisualStateManager.VisualStateGroups>
+                                            <vsm:VisualStateGroup x:Name="RatingModeStates">
+                                                <vsm:VisualState x:Name="Normal"  />
+                                                <vsm:VisualState x:Name="MouseOver">
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="HighlightedStarPath" 
+                                                            Storyboard.TargetProperty="(Shape.Opacity)" 
+                                                            BeginTime="00:00:00" Duration="0:0:0"
+                                                            To="1" />
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="StarPath" 
+                                                            Storyboard.TargetProperty="(Shape.Opacity)" 
+                                                            BeginTime="00:00:00" Duration="0:0:0"
+                                                            To="0" />
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="SelectedStarPath" 
+                                                            Storyboard.TargetProperty="(Shape.Opacity)" 
+                                                            BeginTime="00:00:00" Duration="0:0:0"
+                                                            To="0" />
+                                                    </Storyboard>
+                                                </vsm:VisualState>
+                                                <vsm:VisualState x:Name="Selected">
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                        Storyboard.TargetName="HighlightedStarPath" 
+                                        Storyboard.TargetProperty="(Shape.Opacity)" 
+                                        BeginTime="00:00:00" Duration="0:0:0"
+                                        To="0" />
+                                                        <DoubleAnimation
+                                        Storyboard.TargetName="StarPath" 
+                                        Storyboard.TargetProperty="(Shape.Opacity)" 
+                                        BeginTime="00:00:00" Duration="0:0:0"
+                                        To="0" />
+                                                        <DoubleAnimation
+                                        Storyboard.TargetName="SelectedStarPath" 
+                                        Storyboard.TargetProperty="(Shape.Opacity)" 
+                                        BeginTime="00:00:00" Duration="0:0:0"
+                                        To="1" />
+                                                    </Storyboard>
+                                                </vsm:VisualState>
+                                            </vsm:VisualStateGroup>
+                                        </vsm:VisualStateManager.VisualStateGroups>
+                                        <Path Stretch="UniformToFill" Height="Auto" Width="Auto"
+                                                Margin="2,2,2,2" StrokeThickness="1.5" StrokeLineJoin="Round" x:Name="StarPath"
+                                                Data="F1 M 288,136L 219,136L 192,63.9999L 164.143,136L 96,136L 150.857,184L 123.429,256L 192,208L 260.571,256L 233.143,184L 288,136 Z ">
+                                            <Path.Stroke>
+                                                <RadialGradientBrush RadiusX="0.494924" RadiusY="0.494924" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FF666666" Offset="0"/>
+                                                        <GradientStop Color="#FFD4D4D4" Offset="1"/>
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Path.Stroke>
+                                            <Path.Fill>
+                                                <RadialGradientBrush RadiusX="0.507813" RadiusY="0.507813" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFF0F0EE" Offset="0"/>
+                                                        <GradientStop Color="#FFA9A9A9" Offset="1"/>
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Path.Fill>
+                                        </Path>
+                                        <Path x:Name="HighlightedStarPath" Opacity="0" Stretch="UniformToFill" Height="Auto" Width="Auto"
+                                            Margin="2,2,2,2" StrokeThickness="1.5" StrokeLineJoin="Round" 
+                                            Data="F1 M 288,136L 219,136L 192,63.9999L 164.143,136L 96,136L 150.857,184L 123.429,256L 192,208L 260.571,256L 233.143,184L 288,136 Z ">
+                                            <Path.Stroke>
+                                                <RadialGradientBrush RadiusX="0.494924" RadiusY="0.494924" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFFF9D00" Offset="0"/>
+                                                        <GradientStop Color="#FFFFC100" Offset="1"/>
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Path.Stroke>
+                                            <Path.Fill>
+                                                <RadialGradientBrush RadiusX="0.507813" RadiusY="0.507813" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFFFFF00" Offset="0"/>
+                                                        <GradientStop Color="#FFFF9200" Offset="1"/>
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Path.Fill>
+                                        </Path>
+                                        <Path x:Name="SelectedStarPath" Opacity="0" Stretch="UniformToFill" Height="Auto" Width="Auto"
+                                            Margin="2,2,2,2" StrokeThickness="1.5" StrokeLineJoin="Round" 
+                                            Data="F1 M 288,136L 219,136L 192,63.9999L 164.143,136L 96,136L 150.857,184L 123.429,256L 192,208L 260.571,256L 233.143,184L 288,136 Z ">
+                                            <Path.Stroke>
+                                                <RadialGradientBrush Opacity="0.75" RadiusX="0.5" RadiusY="0.5" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFFF9D00" Offset="0"/>
+                                                        <GradientStop Color="#FFFFC100" Offset="1"/>
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Path.Stroke>
+                                            <Path.Fill>
+                                                <RadialGradientBrush RadiusX="0.5" RadiusY="0.5" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                                                    <RadialGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFFFF500" Offset="0"/>
+                                                        <GradientStop Color="#FFFF3900" Offset="1"/>
+                                                    </RadialGradientBrush.GradientStops>
+                                                </RadialGradientBrush>
+                                            </Path.Fill>
+                                        </Path>
+                                    </Grid>
+                                </ControlTemplate>
+                            </StackPanel.Resources>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="sc:CoolMenu">
+        <Setter Property="MenuItemClickEffect" Value="Bounce" />
+        <Setter Property="MaxItemHeight" Value="110" />
+        <Setter Property="MaxItemWidth" Value="110" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sc:CoolMenu">
+                    <StackPanel x:Name="RootElement" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Center">
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

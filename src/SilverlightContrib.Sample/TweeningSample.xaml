@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.TweeningSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sc="clr-namespace:SilverlightContrib.Tweener;assembly=SilverlightContrib">
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Canvas Grid.ColumnSpan="2" Width="480" Height="100">
+            <Rectangle x:Name="rect" Canvas.Left="50" Canvas.Top="15" Width="75" Height="75" Fill="#447EB0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.Resources>
+                    <BeginStoryboard x:Name="animation">
+                        <Storyboard x:Name="storyboard" AutoReverse="True" RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames
+                                x:Name="animateMove"
+                                Storyboard.TargetName="rect"
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                Duration="0:0:3"
+                                sc:Tween.TransitionType="EaseOutBounce"
+                                sc:Tween.From="50"
+                                sc:Tween.To="330"
+                                sc:Tween.Fps="20"/>
+                            <DoubleAnimationUsingKeyFrames
+                                x:Name="animateRotate"
+                                Storyboard.TargetName="rotate"
+                                Storyboard.TargetProperty="Angle"
+                                Duration="0:0:3"
+                                sc:Tween.TransitionType="EaseOutElastic"
+                                sc:Tween.From="0"
+                                sc:Tween.To="180"
+                                sc:Tween.Fps="20"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Rectangle.Resources>
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="rotate"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+        <StackPanel Grid.Row="1" >
+            <CheckBox x:Name="checkMove" Margin="4" Style="{StaticResource CheckBoxStyle}" IsChecked="True" Content="Move Tween" Checked="checkMove_Checked" Unchecked="checkMove_Unchecked" />
+            <ListBox x:Name="listMove" Margin="4" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" MaxHeight="160" SelectionChanged="listMove_SelectionChanged" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="4">
+                <TextBlock Text="FPS (0-50):" Foreground="{StaticResource textColour}" VerticalAlignment="Center"/>
+                <Slider x:Name="sliderMove" Style="{StaticResource SliderStyle}" Minimum="1" Maximum="50" Value="20" Width="100" ValueChanged="sliderMove_ValueChanged" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+            <CheckBox x:Name="checkRotate" Margin="4" Style="{StaticResource CheckBoxStyle}" IsChecked="True" Content="Rotate Tween" Checked="checkRotate_Checked" Unchecked="checkRotate_Unchecked" />
+            <ListBox x:Name="listRotate" Margin="4" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" MaxHeight="160" SelectionChanged="listRotate_SelectionChanged" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="4">
+                <TextBlock Text="FPS (0-50):" Foreground="{StaticResource textColour}" VerticalAlignment="Center"/>
+                <Slider x:Name="sliderRotate" Style="{StaticResource SliderStyle}" Minimum="1" Maximum="50" Value="20" MinWidth="100" ValueChanged="sliderRotate_ValueChanged" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

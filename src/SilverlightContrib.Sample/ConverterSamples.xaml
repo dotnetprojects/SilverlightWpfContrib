@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.ConverterSamples"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:SilverlightContrib.Data.Converters;assembly=SilverlightContrib.Data">
+  <StackPanel x:Name="LayoutRoot"
+              Width="500"
+              Background="White">
+    <StackPanel.Resources>
+      <converters:HtmlDecodeConverter x:Key="HtmlDecodeConverter" />
+      <converters:StringFormatConverter x:Key="StringFormatConverter" />
+      <converters:MoneyConverter x:Key="MoneyConverter" />
+      <converters:DateTimeValueConverter x:Key="DateTimeConverter" />
+    </StackPanel.Resources>
+    <TextBlock Text="HtmlDecodeConver: Decoding HTML Entities"
+               Margin="3" />
+    <ListBox x:Name="lstItemsHtmlDecoder"
+             Margin="3"
+             Height="100">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Entity}" />
+            <TextBlock Text="  =  " />
+            <TextBlock Text="{Binding Entity, Converter={StaticResource HtmlDecodeConverter}}" />
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <TextBlock Text="StringFormatConverter: Formatting DateTime Instances"
+               Margin="3" />
+    <ListBox x:Name="lstItemsStringFormatter"
+             Margin="3"
+             Height="100">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding EntityDate, Converter={StaticResource StringFormatConverter}, ConverterParameter='{0:MM/dd/yy}'}" />
+            <TextBlock Text="  =  " />
+            <TextBlock Text="{Binding EntityDate, Converter={StaticResource StringFormatConverter}, ConverterParameter='{0:D}'}" />
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <TextBlock Text="MoneyConverter: Formatting Decimal Instances"
+               Margin="3" />
+    <ListBox x:Name="lstItemsMoneyFormatter"
+             Margin="3"
+             Height="100">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Price}" />
+            <TextBlock Text="  =  " />
+            <TextBlock Text="{Binding Price, Converter={StaticResource MoneyConverter}}" />
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <TextBlock Text="DateTimeConverter: Formatting Date Instances (Bi-directional binding supported)"
+               Margin="3" />
+    <ListBox x:Name="lstItemsDateTimeConverter"
+             Margin="3"
+             Height="100">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding EntityDate}" />
+            <TextBlock Text="  =  " />
+            <TextBlock Text="{Binding EntityDate, Converter={StaticResource DateTimeConverter}}" />
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </StackPanel>
+</UserControl>

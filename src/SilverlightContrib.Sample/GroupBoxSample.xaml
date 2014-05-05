@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="SilverlightContrib.Sample.GroupBoxSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:sc="clr-namespace:SilverlightContrib.Controls;assembly=SilverlightContrib.Controls">
+    <StackPanel x:Name="LayoutRoot" Background="White">
+        <sc:GroupBox Margin="3" Header="This is a test Group Box" Height="100" Width="400">
+            <Button Content="This is a button contained by the group box."></Button>            
+        </sc:GroupBox>
+        <sc:GroupBox Margin="3" Header="This is another test Group Box" Height="100" Width="300">
+            <sc:GroupBox Margin="3" Header="This is a nested group box">
+            </sc:GroupBox>
+        </sc:GroupBox>
+    </StackPanel>
+</UserControl>

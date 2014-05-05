@@ -1,0 +1,10 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/client/2007" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" VerticalAlignment="Center" Margin="0,100,0,0">
+  <Image Source="../Splash/slc-watermark.png" Height="47" Width="343"
+         HorizontalAlignment="Center"  VerticalAlignment="Center"
+         Margin="10" />
+  <Grid HorizontalAlignment="Center">
+      <Rectangle x:Name="rectBorder" StrokeThickness="1" Stroke="#FFC8C8C8" Height="7" Width="200" HorizontalAlignment="Left"/>
+      <Rectangle x:Name="rectBar" Fill="#FFC8C8C8" Height="7" Width="0" HorizontalAlignment="Left" />
+  </Grid>
+</StackPanel>
