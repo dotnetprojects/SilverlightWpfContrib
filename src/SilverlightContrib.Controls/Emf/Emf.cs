@@ -46,6 +46,8 @@ namespace SilverlightContrib.Controls
         public Emf()
         {
             this.Stretch = Stretch.Uniform;
+            this.HorizontalContentAlignment = System.Windows.HorizontalAlignment.Left;
+            this.VerticalContentAlignment = System.Windows.VerticalAlignment.Top;
         }
 
         private static void OnStretchPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

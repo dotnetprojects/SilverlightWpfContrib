@@ -138,6 +138,8 @@ namespace SilverlightContrib.Xaml.Emf
             WriteStartElement(output, "Canvas");
             WriteAttribute(output, "Width", width * context.Scale);
             WriteAttribute(output, "Height", height * context.Scale);
+            WriteAttribute(output, "HorizontalAlignment", "Left");
+            WriteAttribute(output, "VerticalAlignment", "Top");
 
             while (ReadRecord(input, context, output)) ;
 

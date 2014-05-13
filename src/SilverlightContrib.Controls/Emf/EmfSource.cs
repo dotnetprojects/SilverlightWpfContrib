@@ -88,7 +88,7 @@ namespace SilverlightContrib.Controls
                 ss.Position = 0;
                
                 this.result = (FrameworkElement)XamlReader.Load(ss);
-
+                
                 writer.Close();
                 ss.Close();
 #endif

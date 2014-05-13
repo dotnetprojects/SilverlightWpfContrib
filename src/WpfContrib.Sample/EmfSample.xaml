@@ -1,26 +1,51 @@
 ﻿<UserControl x:Class="SilverlightContrib.Sample.EmfSample"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sc="clr-namespace:SilverlightContrib.Controls;assembly=SilverlightContrib.Controls"
-    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Extended">
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Extended"
+             xmlns:sc="clr-namespace:SilverlightContrib.Controls;assembly=SilverlightContrib.Controls">
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <sc:Emf x:Name="emf" Source="Images/Wmf/lion.wmf" Stretch="Uniform" />
+        <sc:Emf x:Name="emf"
+                Source="Images/Wmf/lion.wmf"
+                Stretch="Uniform" />
         <StackPanel Grid.Row="1">
-            <TextBlock x:Name="txtFileName" Margin="4,4,4,8" Foreground="{StaticResource textColour}" Text="lion.wmf" HorizontalAlignment="Center" />
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBlock x:Name="txtFileName"
+                       Margin="4,4,4,8"
+                       HorizontalAlignment="Center"
+                       Foreground="{StaticResource textColour}"
+                       Text="lion.wmf" />
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                 <StackPanel>
-                    <RadioButton Margin="4" Style="{StaticResource RadioButtonStyle}" Content="No Stretch" Checked="ButtonNone_Checked" />
-                    <RadioButton Margin="4" Style="{StaticResource RadioButtonStyle}" Content="Fill Stretch" Checked="ButtonFill_Checked" />
-                    <RadioButton Margin="4" Style="{StaticResource RadioButtonStyle}" Content="Uniform Stretch" IsChecked="True" Checked="ButtonUniform_Checked" />
-                    <RadioButton Margin="4" Style="{StaticResource RadioButtonStyle}" Content="UniformToFill Stretch" Checked="ButtonUniformToFill_Checked" />
+                    <RadioButton Margin="4"
+                                 Checked="ButtonNone_Checked"
+                                 Content="No Stretch"
+                                 Style="{StaticResource RadioButtonStyle}" />
+                    <RadioButton Margin="4"
+                                 Checked="ButtonFill_Checked"
+                                 Content="Fill Stretch"
+                                 Style="{StaticResource RadioButtonStyle}" />
+                    <RadioButton Margin="4"
+                                 Checked="ButtonUniform_Checked"
+                                 Content="Uniform Stretch"
+                                 IsChecked="True"
+                                 Style="{StaticResource RadioButtonStyle}" />
+                    <RadioButton Margin="4"
+                                 Checked="ButtonUniformToFill_Checked"
+                                 Content="UniformToFill Stretch"
+                                 Style="{StaticResource RadioButtonStyle}" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <Button Margin="2" Style="{StaticResource ButtonStyle}" Click="ButtonNext_Click" Content="Load Next Embedded" />
-                    <Button Margin="2" Style="{StaticResource ButtonStyle}" Click="ButtonOpen_Click" Content="Load From Disk..." />
+                    <Button Margin="2"
+                            Click="ButtonNext_Click"
+                            Content="Load Next Embedded"
+                            Style="{StaticResource ButtonStyle}" />
+                    <Button Margin="2"
+                            Click="ButtonOpen_Click"
+                            Content="Load From Disk..."
+                            Style="{StaticResource ButtonStyle}" />
                 </StackPanel>
             </StackPanel>
         </StackPanel>
