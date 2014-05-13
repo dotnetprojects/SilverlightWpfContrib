@@ -219,7 +219,8 @@ namespace SilverlightContrib.Controls
                 height = (width / this.contentWidth) * this.contentHeight;
             }
 
-            return new Size(Math.Min(width, availableSize.Width), Math.Min(height, availableSize.Height));
+            return base.MeasureOverride(new Size(Math.Min(width, availableSize.Width), Math.Min(height, availableSize.Height)));
+            
         }
 
         /// <summary>
@@ -230,7 +231,7 @@ namespace SilverlightContrib.Controls
         protected override Size ArrangeOverride(Size finalSize)
         {
             Repaint(finalSize);
-            return finalSize;
+            return base.ArrangeOverride(finalSize);
         }
 
         /// <summary>
